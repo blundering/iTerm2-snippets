@@ -18,6 +18,7 @@
 #import "ToolNotes.h"
 #import "ToolPasteHistory.h"
 #import "ToolProfiles.h"
+#import "ToolSnippets.h"
 #import "ToolWebView.h"
 
 NSString *const kCapturedOutputToolName = @"Captured Output";
@@ -27,6 +28,7 @@ NSString *const kJobsToolName = @"Jobs";
 NSString *const kNotesToolName = @"Notes";
 NSString *const kPasteHistoryToolName = @"Paste History";
 NSString *const kProfilesToolName = @"Profiles";
+NSString *const KSnippetsToolName = @"Snippets";
 
 NSString *const kToolbeltShouldHide = @"kToolbeltShouldHide";
 
@@ -59,6 +61,7 @@ static NSString *const kDynamicToolURL = @"URL";
     [iTermToolbeltView registerToolWithName:kNotesToolName withClass:[ToolNotes class]];
     [iTermToolbeltView registerToolWithName:kPasteHistoryToolName withClass:[ToolPasteHistory class]];
     [iTermToolbeltView registerToolWithName:kProfilesToolName withClass:[ToolProfiles class]];
+    [iTermToolbeltView registerToolWithName:KSnippetsToolName withClass:[ToolSnippets class]];
 
     NSDictionary<NSString *, NSDictionary *> *dynamicTools = [[NSUserDefaults standardUserDefaults] objectForKey:kDynamicToolsKey];
     [dynamicTools enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull identifier, NSDictionary * _Nonnull dict, BOOL * _Nonnull stop) {
